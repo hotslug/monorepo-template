@@ -11,5 +11,10 @@ backend/.env
 frontend/dist
 backend/dist
 
+# Local lock/state
+package-lock.json
+.pnpm-lock.yaml
+yarn.lock
+
 # Other
 .DS_Store
