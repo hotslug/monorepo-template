@@ -4,7 +4,6 @@ This is a fullstack monorepo project built with:
 
 - **Frontend**: Vite + React + TypeScript + TailwindCSS
 - **Backend**: Express + TypeScript + MongoDB (Mongoose)
-- **Authentication**: JWT-based login/register
 - **Git Hooks**: Husky + Commitlint (optional)
 
 ---
@@ -15,7 +14,7 @@ This is a fullstack monorepo project built with:
 /monorepo-template
  ├── /frontend   # Vite + React client
  ├── /backend    # Express server with MongoDB
- ├── /.husky     # Git hooks (optional, if set up)
+ ├── /.husky     
  ├── package.json
  ├── .gitignore
  └── README.md
