@@ -1,0 +1,14 @@
+# Node modules
+frontend/node_modules
+backend/node_modules
+
+# Env files
+frontend/.env
+backend/.env
+
+# Dist or build folders
+frontend/dist
+backend/dist
+
+# Other
+.DS_Store
