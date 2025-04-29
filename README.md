@@ -14,7 +14,7 @@ This is a fullstack monorepo project built with:
 /monorepo-template
  ├── /frontend   # Vite + React client
  ├── /backend    # Express server with MongoDB
- ├── /.husky     
+ ├── /.husky
  ├── package.json
  ├── .gitignore
  └── README.md
@@ -33,23 +33,21 @@ cd monorepo-template
 
 ### Install Dependencies
 
-**Install frontend and backend dependencies:**
+**Install all dependencies (frontend, backend, and root):**
 
 ```bash
-# Frontend
-cd frontend
-npm install
-
-# Backend
-cd ../backend
+# From root directory
 npm install
 ```
 
-**(Optional)** Install root dev dependencies if using Husky:
+**To add a package to a specific workspace:**
 
 ```bash
-# From root
-npm install
+# Add to frontend
+npm install <package> -w frontend
+
+# Add to backend
+npm install <package> -w backend
 ```
 
 ---
