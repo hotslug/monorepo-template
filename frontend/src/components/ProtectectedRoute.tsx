@@ -1,12 +1,21 @@
-import React from "react";
-import { Navigate } from "react-router-dom";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-	const token = localStorage.getItem("token");
+  const navigate = useNavigate();
 
-	if (!token) {
-		return <Navigate to="/login" replace />;
-	}
+  const token = localStorage.getItem('token');
 
-	return children;
+  React.useEffect(() => {
+    if (!token) {
+      console.log('ProtectedRoute - No token found, redirecting to login');
+      navigate('/login', { replace: true });
+    }
+  }, [token, navigate]);
+
+  if (!token) {
+    return null;
+  }
+
+  return <>{children}</>;
 };

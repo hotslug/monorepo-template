@@ -25,7 +25,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
-    "@eslint/js": "^9.22.0",
+    "@eslint/js": "^9.25.1",
     "@typescript-eslint/eslint-plugin": "^8.31.1",
     "@typescript-eslint/parser": "^8.31.1",
     "concurrently": "^8.2.0",
@@ -40,6 +40,6 @@
     "lint-staged": "^15.5.1",
     "prettier": "^3.5.3",
     "typescript": "^5.3.3",
-    "typescript-eslint": "^8.26.1"
+    "typescript-eslint": "^8.31.1"
   }
 }
