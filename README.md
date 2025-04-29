@@ -6,6 +6,8 @@ This is a fullstack monorepo project built with:
 - **Backend**: Express + TypeScript + MongoDB (Mongoose)
 - **Git Hooks**: Husky + Commitlint (optional)
 
+> **Note**: This is a template repository. If you've created a new repository from this template, it won't receive automatic updates. To update your repository with changes from this template, you'll need to manually merge the changes.
+
 ---
 
 ## 🏗 Project Structure
@@ -93,6 +95,13 @@ PORT=3000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 ```
+
+**Security Note**: For better security, consider storing sensitive environment variables in 1Password:
+
+1. Create a new item in 1Password
+2. Add your environment variables as fields
+3. Use 1Password CLI or browser extension to access these values when needed
+4. Never commit `.env` files to version control
 
 ---
 
