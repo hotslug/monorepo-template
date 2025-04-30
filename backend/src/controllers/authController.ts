@@ -1,10 +1,10 @@
 import bcrypt from 'bcryptjs';
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import User from '../models/userModel';
 
 export const registerUser = async (req: Request, res: Response) => {
-  const { email, password } = req.body;
+  const { email, password, first_name } = req.body;
 
   try {
     const userExists = await User.findOne({ email });
@@ -18,15 +18,17 @@ export const registerUser = async (req: Request, res: Response) => {
     const user = await User.create({
       email,
       password: hashedPassword,
+      first_name,
     });
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET!, {
+    const token = jwt.sign({ id: user._id, first_name: user.first_name }, process.env.JWT_SECRET!, {
       expiresIn: '30d',
     });
 
     res.status(201).json({
       _id: user._id,
       email: user.email,
+      first_name: user.first_name,
       token,
     });
   } catch (error: unknown) {
@@ -51,13 +53,14 @@ export const loginUser = async (req: Request, res: Response) => {
       return res.status(400).json({ message: 'Invalid credentials' });
     }
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET!, {
+    const token = jwt.sign({ id: user._id, first_name: user.first_name }, process.env.JWT_SECRET!, {
       expiresIn: '30d',
     });
 
     res.json({
       _id: user._id,
       email: user.email,
+      first_name: user.first_name,
       token,
     });
   } catch (error) {
